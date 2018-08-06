@@ -27,7 +27,7 @@ class Knowledge(Base):
 
 x = Knowledge(knowledge_id = 1, name = "weather", topic = "rainbow", rating = 9)
 
-print(x)
+#print(x)
 
 """if (x.rating < 7):
 	print("Unfortunately, this article does not have a better rating. Maybe, this is an article that should be
