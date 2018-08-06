@@ -13,5 +13,23 @@ class Knowledge(Base):
 	# The third column will be a string representing the 
 	# topic of the article. The last column will be
 	# an integer, representing your rating of the article.
+	__tablename__ = 'knowledge'
+	knowledge_id = Column(Integer, primary_key = True)
+	name = Column(String)
+	topic = Column(String)
+	rating = Column(Integer)
+	def __repr__(self):
+		return("Primary Key: {}\n"
+				"If you want to learn about {}, you should look at the Wikipedia article called {}. We gave this article a rating of {} out of 10!"
+				).format(
+					self.knowledge_id, self.name, self.topic, self.rating
+				)
 
-	pass
+x = Knowledge(knowledge_id = 1, name = "weather", topic = "rainbow", rating = 9)
+
+print(x)
+
+"""if (x.rating < 7):
+	print("Unfortunately, this article does not have a better rating. Maybe, this is an article that should be
+")
+else: print(x)"""
