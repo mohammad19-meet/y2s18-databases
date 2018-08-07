@@ -22,6 +22,12 @@ def query_all_articles():
 		Knowledge).all()
 	return article
 	
+def query_article_by_rating(rating, threshold):
+	rating = session.query(
+		Knowledge).filter(
+			rating < threshold).all()
+	return rating
+
 
 def query_article_by_topic(topic):
 	article = session.query(
@@ -43,9 +49,16 @@ def delete_all_articles():
 	session.commit()
 	
 
-def edit_article_rating():
-	pass
-
+def edit_article_rating(topic, new_rating):
+	article_object = session.query(
+		Knowledge).filter_by(
+		topic = topic).first()
+	article_object.rating = new_rating
+	session.commit()
 
 #add_article('wonders',"space", 9)
 #print(query_all_articles())
+#delete_article_by_topic("space")
+#edit_article_rating("space", 8)
+query_article_by_rating(8,5)
+print(query_all_articles())

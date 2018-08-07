@@ -19,8 +19,10 @@ class Knowledge(Base):
 	topic = Column(String)
 	rating = Column(Integer)
 	def __repr__(self):
-		return("Primary Key: {}\n"
-				"If you want to learn about {}, you should look at the Wikipedia article called {}. We gave this article a rating of {} out of 10!"
+		return("Primary Key: {},\n"
+				"Name: {},\n"
+				"Article: {},\n"
+				"Rating: {},\n"
 				).format(
 					self.knowledge_id, self.name, self.topic, self.rating
 				)
